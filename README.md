@@ -25,13 +25,42 @@ A simple Python script that converts PDF files to Microsoft Word (DOCX) format u
 
 ## How to Use
 
-### Running the Script
+### Available Conversion Options
+
+This project now includes **three different converters** with varying levels of formatting preservation:
+
+#### 1. **Basic Converter** (`pdfDocx.py`)
+- ✅ Fast and reliable
+- ✅ Handles quotes in file paths automatically  
+- ⚠️ Plain text output (minimal formatting)
+```powershell
+.\.venv\Scripts\python.exe pdfDocx.py
+```
+
+#### 2. **Advanced Converter** (`advanced_converter.py`)
+- ✅ Preserves tables and their structure
+- ✅ Detects and formats headers
+- ✅ Maintains bullet points and lists
+- ✅ Preserves paragraph spacing
+```powershell
+.\.venv\Scripts\python.exe advanced_converter.py
+```
+
+#### 3. **Ultra Converter** (`ultra_converter.py`)
+- ✅ Maximum formatting preservation
+- ✅ Font size detection and preservation
+- ✅ Advanced text classification
+- ✅ Contact information formatting
+- ✅ Section header emphasis
+- ⚠️ Requires additional packages (auto-installed)
+```powershell
+.\.venv\Scripts\python.exe ultra_converter.py
+```
+
+### Running the Scripts
 
 1. Open PowerShell and navigate to the project directory
-2. Run the script using the virtual environment:
-   ```powershell
-   .\.venv\Scripts\python.exe pdfDocx.py
-   ```
+2. Choose your preferred converter and run it:
 3. The script will prompt you: `Enter the path to the PDF file:`
 
 ### Providing PDF File Paths
@@ -72,14 +101,17 @@ Document extracted and saved.
 
 ## Output Location
 
-The converted DOCX file will be saved in the **same directory as the script** with the filename:
-```
-PDF-Plumber-output.docx
-```
+The converted DOCX files will be saved in the **same directory as the script** with different filenames based on the converter used:
 
-**Full path:** `[Your project directory]\PDF-Plumber-output.docx`
+| Converter | Output Filename | Features |
+|-----------|----------------|----------|
+| Basic | `PDF-Enhanced-output.docx` | Plain text with basic structure |
+| Advanced | `PDF-Advanced-Formatted.docx` | Tables, headers, bullets, spacing |
+| Ultra | `PDF-Ultra-Formatted.docx` | Maximum formatting preservation |
 
-⚠️ **Note:** Each time you run the script, it will overwrite the previous output file.
+**Full path:** `[Your project directory]\[Output filename]`
+
+⚠️ **Note:** Each time you run a converter, it will overwrite its previous output file.
 
 ## Troubleshooting
 
